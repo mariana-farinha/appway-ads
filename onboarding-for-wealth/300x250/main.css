@@ -76,6 +76,7 @@ body {
   -moz-transition: left 1s, opacity 1s;
   -o-transition: left 1s, opacity 1s;
   -webkit-transition: left 1s, opacity 1s;
+  -ms-transition: left 1s, opacity 1s;
   transform: translateZ(0);
 }
 
