@@ -81,6 +81,7 @@ body {
 
 .aw_slide {
   height: 100%;
+  width: 100%;
 }
 
 .aw_slide.show,
