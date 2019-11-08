@@ -84,6 +84,10 @@ body {
   width: 100%;
 }
 
+.aw_slide > * {
+  max-width: 100%;
+}
+
 .aw_slide.show,
 .aw_top-banner_logo.show {
   opacity: 1;
