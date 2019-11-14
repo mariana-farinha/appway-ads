@@ -1,0 +1,43 @@
+window.addEventListener("load", function() {
+  var ad = (function() {
+    var CONST = {
+      CSS_CLASS: {
+        SHOW: " show ",
+        HIDE: " hide "
+      }
+    };
+    var adContainer = document.getElementById("aw_ad");
+    var logo = document.getElementsByClassName("aw_top-banner_logo")[0];
+    var slides = document.getElementsByClassName("aw_slide");
+
+    var init = function() {
+      logo.className += CONST.CSS_CLASS.SHOW;
+    };
+
+    var showSlide = function(index) {
+      setTimeout(function() {
+        index > 0
+          ? (slides[index - 1].className = slides[index - 1].className.replace(
+              CONST.CSS_CLASS.SHOW,
+              CONST.CSS_CLASS.HIDE
+            ))
+          : null;
+        slides[index].className += CONST.CSS_CLASS.SHOW;
+      }, 2500 * index + 1000);
+    };
+
+    var run = function() {
+      init();
+      var i;
+      for (i = 0; i < slides.length; i++) {
+        showSlide(i);
+      }
+    };
+
+    return {
+      run: run
+    };
+  })();
+
+  ad.run();
+});
