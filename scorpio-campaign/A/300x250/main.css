@@ -96,14 +96,23 @@ body {
   max-width: 100%;
 }
 
-.aw_slide.show,
 .aw_top-banner_logo.show {
   opacity: 1;
   left: 0;
 }
 
-.hide {
-  display: none !important;
+.aw_slide.show {
+  opacity: 1;
+  left: 0;
+}
+
+.aw_slide.hide {
+  height: 0;
+  overflow: hidden;
+  max-height: 0px;
+  padding: 0px;
+  margin: 0;
+  line-height: 0;
 }
 
 #aw_ad.show-background {
@@ -111,6 +120,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .btn {
