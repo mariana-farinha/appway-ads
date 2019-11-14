@@ -70,7 +70,7 @@ body {
 .aw_slide,
 .aw_top-banner_logo {
   opacity: 0;
-  left: -100px;
+  left: -30px;
   position: relative;
   transition: left 1s, opacity 1s;
   -moz-transition: left 1s, opacity 1s;
@@ -106,4 +106,40 @@ body {
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: center right;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  border: 1px solid #fff;
+  padding: 6px 17px;
+  line-height: 1.5;
+  border-radius: 30px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-size: 16px;
+  min-width: 100px;
+  cursor: pointer;
+  margin-left: 80px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background-color: #dadada;
+  border-color: #dadada;
+  color: #000;
+}
+
+.align-self-center {
+  -ms-flex-item-align: center !important;
+  align-self: center !important;
 }
