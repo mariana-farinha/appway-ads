@@ -15,27 +15,32 @@ window.addEventListener("load", function() {
       logo.className += CONST.CSS_CLASS.SHOW;
     };
 
+    var replaceCssClassName = function(element, target, replacement) {
+      element.className = element.className.replace(target, replacement);
+    };
+
     var showSlide = function(index) {
+      replaceCssClassName(
+        slides[index],
+        CONST.CSS_CLASS.HIDE,
+        CONST.CSS_CLASS.SHOW
+      );
+
+      index++;
+
       setTimeout(function() {
-        index > 0
-          ? (slides[index - 1].className = slides[index - 1].className.replace(
-              CONST.CSS_CLASS.SHOW,
-              CONST.CSS_CLASS.HIDE
-            ))
-          : null;
-        slides[index].className += CONST.CSS_CLASS.SHOW;
-        if (index === slides.length - 1) {
-          adContainer.className += CONST.CSS_CLASS.SHOW_BACKGROUND;
-        }
-      }, 2500 * index + 1000);
+        replaceCssClassName(
+          slides[index - 1],
+          CONST.CSS_CLASS.SHOW,
+          CONST.CSS_CLASS.HIDE
+        );
+        showSlide(index % slides.length);
+      }, 2500);
     };
 
     var run = function() {
       init();
-      var i;
-      for (i = 0; i < slides.length; i++) {
-        showSlide(i);
-      }
+      showSlide(0);
     };
 
     return {

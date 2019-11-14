@@ -100,8 +100,18 @@ body {
   left: 0;
 }
 
-.hide {
-  display: none !important;
+.aw_slide.show {
+  opacity: 1;
+  left: 0;
+}
+
+.aw_slide.hide {
+  height: 0;
+  overflow: hidden;
+  max-height: 0px;
+  padding: 0px;
+  margin: 0;
+  line-height: 0;
 }
 
 #aw_ad {
