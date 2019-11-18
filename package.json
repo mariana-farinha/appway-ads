@@ -1,0 +1,22 @@
+{
+  "name": "appway-ads",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariana-farinha/appway-ads.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariana-farinha/appway-ads/issues"
+  },
+  "homepage": "https://github.com/mariana-farinha/appway-ads#readme",
+  "devDependencies": {
+    "jasmine": "^3.5.0"
+  }
+}
