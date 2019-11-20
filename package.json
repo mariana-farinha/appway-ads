@@ -18,6 +18,8 @@
   "homepage": "https://github.com/mariana-farinha/appway-ads#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "jasmine": "^3.5.0"
+    "gulp-clean": "^0.4.0",
+    "jasmine": "^3.5.0",
+    "panini": "^1.6.3"
   }
 }
