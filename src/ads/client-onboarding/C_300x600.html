@@ -1,0 +1,84 @@
+---
+layout: default
+title: Client Onboarding in Wealth Management
+data: client-onboarding.json
+stylesheet: client-onboarding.css
+---
+
+<a
+  target="_blank"
+  href="{{client-onboarding.C.target}}"
+  style="text-decoration: none;display: inline-block; position: absolute;"
+>
+  <div
+    id="aw_ad"
+    style="width: 300px; height: 600px; overflow: hidden;"
+    class="d-flex flex-column bg-image-1"
+  >
+    <div class="aw_top-banner">
+      <img
+        class="aw_top-banner_logo"
+        src="{{root}}images/appway-logo--light.svg"
+        width="80"
+        height="21"
+      />
+    </div>
+    <div
+      style="height: 100%; width: 100%; overflow: hidden;"
+      class="aw_main flex-grow"
+    >
+      <div
+        class="aw_slide h-90 d-flex flex-column justify-content-center align-items-start hide "
+      >
+        <h1 style="color:  #4d4d4e;" class="text-bold text-xl line-height-sm">
+          {{client-onboarding.C.slide.[0].textArea.[0]}}
+          <span style="color: #3ca09b;"
+            >{{client-onboarding.C.slide.[0].textArea.[1]}}</span
+          >
+        </h1>
+      </div>
+
+      <div
+        class="aw_slide h-90 d-flex flex-column justify-content-center align-items-start hide "
+      >
+        <h2 style="color:  #4d4d4e;" class="text-xl text-bold line-height-md">
+          {{client-onboarding.C.slide.[1].textArea.[0]}}
+          <span style="color: #3ca09b;"
+            >{{client-onboarding.C.slide.[1].textArea.[1]}}</span
+          >
+        </h2>
+      </div>
+
+      <div
+        class="aw_slide h-90 d-flex flex-column justify-content-center align-items-start hide "
+      >
+        <h2 style="color:  #4d4d4e;" class="text-xl text-bold line-height-md">
+          {{client-onboarding.C.slide.[2].textArea.[0]}}
+          <br />
+          <span style="color: #3ca09b;"
+            >{{client-onboarding.C.slide.[2].textArea.[1]}}</span
+          >
+        </h2>
+      </div>
+
+      <div
+        class="aw_slide h-90 d-flex flex-column justify-content-center align-items-start hide "
+      >
+        <div>
+          <h2
+            style="color:  #4d4d4e;"
+            class="text-bold text-xxl line-height-sm"
+          >
+            {{client-onboarding.C.slide.[3].textArea.[0]}}
+            <span style="color: #3ca09b;"
+              >{{client-onboarding.C.slide.[3].textArea.[1]}}</span
+            >
+          </h2>
+          <button class="btn mt-4">
+            {{client-onboarding.C.slide.[4].textArea.[0]}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

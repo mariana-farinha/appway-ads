@@ -1,0 +1,86 @@
+---
+layout: default
+title: Innovate To Succeed
+data: scorpio-campaign.json
+stylesheet: scorpio-campaign.css
+---
+
+<a
+  target="_blank"
+  href="{{scorpio-campaign.C.target}}"
+  style="text-decoration: none;display: inline-block; position: absolute;"
+>
+  <div
+    id="aw_ad"
+    style="background-color: #222222; width: 300px; height: 600px; overflow: hidden;"
+    class="d-flex flex-column bg-image bg-no-repeat bg-bottom bg-auto"
+  >
+    <div class="aw_top-banner">
+      <img
+        class="aw_top-banner_logo"
+        src="{{root}}images/appway-logo--white.svg"
+        width="80"
+        height="21"
+      />
+    </div>
+    <div
+      style="height: 100%; width: 100%; overflow: hidden;"
+      class="aw_main flex-grow"
+    >
+      <div
+        class="aw_slide h-60 d-flex flex-column justify-content-center align-items-start hide "
+      >
+        <h1 style="color: #ffffff;" class="text-light text-xl line-height-sm">
+          {{scorpio-campaign.C.slide.[0].textArea.[0]}}
+        </h1>
+        <span
+          class="text-sm text-bold line-height-lg "
+          style="color: #f2c61a; margin-bottom: 15px;"
+          >{{scorpio-campaign.C.slide.[0].textArea.[1]}}</span
+        >
+      </div>
+
+      <div
+        class="aw_slide h-60 d-flex flex-column justify-content-center align-items-start hide "
+      >
+        <h2 style="color: #ffffff;" class="text-md text-bold line-height-md">
+          {{scorpio-campaign.C.slide.[1].textArea.[0]}}
+          <span style="color: #f2c61a;"
+            >{{scorpio-campaign.C.slide.[1].textArea.[1]}}</span
+          >
+        </h2>
+      </div>
+
+      <div
+        class="aw_slide h-60 d-flex flex-column justify-content-center align-items-start hide "
+      >
+        <h2 style="color: #ffffff;" class="text-md text-bold line-height-md">
+          {{scorpio-campaign.C.slide.[2].textArea.[0]}}
+          <br />
+          <span style="color: #f2c61a;"
+            >{{scorpio-campaign.C.slide.[2].textArea.[1]}}</span
+          >
+        </h2>
+      </div>
+
+      <div
+        class="aw_slide h-60 d-flex flex-column justify-content-center align-items-start hide "
+      >
+        <div>
+          <h2
+            style="color: #ffffff; margin-bottom: 8px;"
+            class="text-light text-xxl line-height-sm"
+          >
+            {{scorpio-campaign.C.slide.[3].textArea.[0]}}
+          </h2>
+          <span style="color: #f2c61a;" class="text-sm text-bold line-height-lg"
+            >{{scorpio-campaign.C.slide.[3].textArea.[1]}}</span
+          >
+          <button class="btn mt-4">
+            {{scorpio-campaign.C.slide.[4].textArea.[0]}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
