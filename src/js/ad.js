@@ -41,6 +41,10 @@ window.addEventListener("load", function() {
 
       index++;
 
+      if (index === slides.length) {
+        return;
+      }
+
       setTimeout(function() {
         replaceCssClassName(
           slides[index - 1],
