@@ -1,13 +1,6 @@
----
-layout: default
-title: Innovate To Succeed
-data: scorpio-campaign.json
-stylesheet: scorpio-campaign.css
----
-
 <a
   target="_blank"
-  href="{{scorpio-campaign.B.target}}"
+  href="{{data.target}}"
   style="text-decoration: none;display: inline-block; position: absolute;"
 >
   <div
@@ -35,10 +28,10 @@ stylesheet: scorpio-campaign.css
         style="padding-top:"
       >
         <h1 style="color: #ffffff;" class="text-light text-md line-height-sm">
-          {{scorpio-campaign.B.slide.[0].textArea.[0]}}
+          {{data.slide.[0].textArea.[0]}}
         </h1>
         <span class="text-xs text-bold line-height-lg " style="color: #f2c61a;"
-          >{{scorpio-campaign.B.slide.[0].textArea.[1]}}</span
+          >{{data.slide.[0].textArea.[1]}}</span
         >
       </div>
 
@@ -46,10 +39,8 @@ stylesheet: scorpio-campaign.css
         class="aw_slide pl-4  h-100 d-flex flex-column justify-content-center align-items-start hide "
       >
         <h2 style="color: #ffffff;" class="text-xs text-bold line-height-md">
-          {{scorpio-campaign.B.slide.[1].textArea.[0]}}
-          <span style="color: #f2c61a;"
-            >{{scorpio-campaign.B.slide.[1].textArea.[1]}}</span
-          >
+          {{data.slide.[1].textArea.[0]}}
+          <span style="color: #f2c61a;">{{data.slide.[1].textArea.[1]}}</span>
         </h2>
       </div>
 
@@ -57,11 +48,9 @@ stylesheet: scorpio-campaign.css
         class="aw_slide pl-4  h-100 d-flex flex-column justify-content-center align-items-start hide "
       >
         <h2 style="color: #ffffff;" class="text-xs text-bold line-height-md">
-          {{scorpio-campaign.B.slide.[2].textArea.[0]}}
+          {{data.slide.[2].textArea.[0]}}
 
-          <span style="color: #f2c61a;"
-            >{{scorpio-campaign.B.slide.[2].textArea.[1]}}</span
-          >
+          <span style="color: #f2c61a;">{{data.slide.[2].textArea.[1]}}</span>
         </h2>
       </div>
 
@@ -71,16 +60,16 @@ stylesheet: scorpio-campaign.css
       >
         <div style="max-width: 180px;">
           <h2 style="color: #ffffff;" class="text-light text-xs line-height-sm">
-            {{scorpio-campaign.B.slide.[3].textArea.[0]}}
+            {{data.slide.[3].textArea.[0]}}
           </h2>
           <span
             style="color: #f2c61a; "
             class="text-xxs text-bold line-height-lg"
-            >{{scorpio-campaign.B.slide.[3].textArea.[1]}}</span
+            >{{data.slide.[3].textArea.[1]}}</span
           >
         </div>
         <button class="btn align-self-center" style="margin-left: 15px;">
-          {{scorpio-campaign.B.slide.[4].textArea.[0]}}
+          {{data.slide.[4].textArea.[0]}}
         </button>
       </div>
     </div>
