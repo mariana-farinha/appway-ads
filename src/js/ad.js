@@ -4,15 +4,14 @@ window.addEventListener("load", function() {
     // Constant Values
     var CONST = {
       CSS_CLASS: {
-        SHOW: " show ",
-        HIDE: " hide ",
+        SHOW: " aw_slide--show ",
+        HIDE: " aw_slide--hide ",
         LAST_SLIDE: " last-slide "
       }
     };
 
     // HTML Elements of interest
     var adContainer = document.getElementById("aw_ad");
-    var logo = document.getElementsByClassName("aw_top-banner_logo")[0];
     var slides = document.getElementsByClassName("aw_slide");
 
     // Exposes the config obj
