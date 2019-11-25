@@ -1,11 +1,13 @@
 const { src, dest, parallel, series, watch } = require("gulp");
-const clean = require("gulp-clean");
 const panini = require("panini");
 const browser = require("browser-sync");
 const fs = require("fs");
+const plugins = require("gulp-load-plugins");
+
+const $ = plugins();
 
 function cleanup() {
-  return src("dist", { read: false, allowEmpty: true }).pipe(clean());
+  return src("dist", { read: false, allowEmpty: true }).pipe($.clean());
 }
 
 // Reset Panini's cache of layouts and partials
@@ -27,8 +29,12 @@ function html() {
     .pipe(dest("dist/ads"));
 }
 
-function css() {
-  return src("src/css/**/*.css").pipe(dest("dist/css"));
+sass.compiler = require("node-sass");
+
+function sass() {
+  return src("src/sass/**/*.scss")
+    .pipe($.sass().on("error", $.sass.logError))
+    .pipe(dest("dist/css"));
 }
 
 function js() {
@@ -59,15 +65,15 @@ function watchFiles() {
     series(resetCache, html, browser.reload)
   );
   watch("src/data/*").on("all", series(resetCache, html, browser.reload));
-  watch("src/css/**/*.css").on("all", series(css, browser.reload));
+  watch("src/sass/**/*.scss").on("all", series(sass, browser.reload));
   watch("src/images/**/*").on("all", series(images, browser.reload));
 }
 
-exports.build = series(resetCache, cleanup, parallel(html, css, js, images));
+exports.build = series(resetCache, cleanup, parallel(html, sass, js, images));
 exports.default = series(
   resetCache,
   cleanup,
-  parallel(html, css, js, images),
+  parallel(html, sass, js, images),
   server,
   watchFiles
 );
