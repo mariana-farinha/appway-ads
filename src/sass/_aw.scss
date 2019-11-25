@@ -1,0 +1,70 @@
+.aw_slide {
+  opacity: 0;
+  left: -30px;
+  position: relative;
+  transition: left 1s, opacity 1s;
+  -moz-transition: left 1s, opacity 1s;
+  -o-transition: left 1s, opacity 1s;
+  -webkit-transition: left 1s, opacity 1s;
+  -ms-transition: left 1s, opacity 1s;
+  transform: translateZ(0);
+}
+
+.aw_slide {
+  width: 100%;
+  padding: 15px;
+}
+
+.aw_slide > * {
+  max-width: 100%;
+}
+
+.aw_top-banner {
+  position: absolute;
+  top: 0;
+  padding: 15px 15px 0px 15px;
+}
+
+.aw_btn {
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  color: $btn-color;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: $btn-bg;
+  border: 1px solid $btn-bg;
+  padding: $btn-padding-y $btn-padding-x;
+  line-height: $line-height-lg;
+  border-radius: $btn-border-radius;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-size: $text-xxs;
+  position: relative;
+  cursor: pointer;
+}
+
+.aw_btn:hover,
+.aw_btn:focus,
+.aw_btn:active {
+  background-color: $btn-hover-bg;
+  border-color: $btn-hover-bg;
+  color: $btn-hover-color;
+}
+
+.aw_slide--show {
+  opacity: 1;
+  left: 0;
+}
+
+.aw_slide--hide {
+  height: 0;
+  overflow: hidden;
+  max-height: 0px;
+  padding: 0px;
+  margin: 0;
+  line-height: 0;
+}

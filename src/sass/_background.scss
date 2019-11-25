@@ -1,0 +1,38 @@
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-right {
+  background-position: right;
+}
+
+.bg-bottom {
+  background-position: bottom;
+}
+
+.bg-center-right {
+  background-position: center right;
+}
+
+.bg-auto {
+  background-size: auto;
+}
+
+.bg-gradient {
+  background-image: radial-gradient(
+    circle at right,
+    rgba(219, 247, 240, 1),
+    rgba(244, 244, 244, 1)
+  );
+
+  background-image: -moz-radial-gradient(
+    circle at right,
+    rgba(219, 247, 240, 1),
+    rgba(244, 244, 244, 1)
+  );
+  background-image: -o-radial-gradient(
+    circle at right,
+    rgba(219, 247, 240, 1),
+    rgba(244, 244, 244, 1)
+  );
+}

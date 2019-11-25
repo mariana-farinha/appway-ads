@@ -1,0 +1,17 @@
+$primary: #3ca09b;
+$secondary: #4d4d4e;
+$btn-color: #ffffff;
+$btn-bg: #3ca09b;
+$btn-hover-bg: #069691;
+$btn-hover-color: #ffffff;
+
+@import "base";
+
+.bg-image {
+  background-image: url(../images/client-onboarding.jpg);
+  background-size: cover;
+}
+
+.bg-image-1 {
+  background-image: url(../images/client-onboarding-2.png);
+}
