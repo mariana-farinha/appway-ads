@@ -20,7 +20,8 @@ function html() {
       panini({
         root: "src",
         layouts: "src/layouts",
-        data: "src/data"
+        data: "src/data",
+        partials: "src/partials"
       })
     )
     .pipe(dest("dist/ads"));
@@ -53,6 +54,10 @@ function server(done) {
 function watchFiles() {
   watch("src/ads/**/*.html").on("all", series(html, browser.reload));
   watch("src/layouts/**/*").on("all", series(resetCache, html, browser.reload));
+  watch("src/partials/**/*").on(
+    "all",
+    series(resetCache, html, browser.reload)
+  );
   watch("src/data/*").on("all", series(resetCache, html, browser.reload));
   watch("src/css/**/*.css").on("all", series(css, browser.reload));
   watch("src/images/**/*").on("all", series(images, browser.reload));
