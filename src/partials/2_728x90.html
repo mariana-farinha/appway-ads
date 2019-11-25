@@ -24,10 +24,10 @@
       class="aw_main flex-grow"
     >
       <div
-        class="aw_slide pl-4 h-100 d-flex flex-column justify-content-center align-items-start hide "
+        class="aw_slide pl-4 h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
         style="padding-top:"
       >
-        <h1 style="color: #ffffff;" class="text-light text-md line-height-sm">
+        <h1 class="text-light text-md line-height-sm text-secondary">
           {{data.slide.[0].textArea.[0]}}
         </h1>
         <span class="text-xs text-bold line-height-lg " style="color: #f2c61a;"
@@ -36,39 +36,39 @@
       </div>
 
       <div
-        class="aw_slide pl-4  h-100 d-flex flex-column justify-content-center align-items-start hide "
+        class="aw_slide pl-4  h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
       >
-        <h2 style="color: #ffffff;" class="text-xs text-bold line-height-md">
+        <h2 class="text-xs text-bold line-height-md text-secondary">
           {{data.slide.[1].textArea.[0]}}
-          <span style="color: #f2c61a;">{{data.slide.[1].textArea.[1]}}</span>
+          <span  class="text-primary">{{data.slide.[1].textArea.[1]}}</span>
         </h2>
       </div>
 
       <div
-        class="aw_slide pl-4  h-100 d-flex flex-column justify-content-center align-items-start hide "
+        class="aw_slide pl-4  h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
       >
-        <h2 style="color: #ffffff;" class="text-xs text-bold line-height-md">
+        <h2 class="text-xs text-bold line-height-md text-secondary">
           {{data.slide.[2].textArea.[0]}}
 
-          <span style="color: #f2c61a;">{{data.slide.[2].textArea.[1]}}</span>
+          <span  class="text-primary"">{{data.slide.[2].textArea.[1]}}</span>
         </h2>
       </div>
 
       <div
-        class="aw_slide pl-4  h-100 d-flex flex-row justify-content-start align-items-center hide "
+        class="aw_slide pl-4  h-100 d-flex flex-row justify-content-start align-items-center aw_slide--hide "
         style="padding: 0;"
       >
         <div style="max-width: 180px;">
-          <h2 style="color: #ffffff;" class="text-light text-xs line-height-sm">
+          <h2 class="text-light text-xs line-height-sm text-secondary">
             {{data.slide.[3].textArea.[0]}}
           </h2>
           <span
-            style="color: #f2c61a; "
+          class="text-primary"
             class="text-xxs text-bold line-height-lg"
             >{{data.slide.[3].textArea.[1]}}</span
           >
         </div>
-        <button class="btn align-self-center" style="margin-left: 15px;">
+        <button class="aw_btn align-self-center" style="margin-left: 15px;">
           {{data.slide.[4].textArea.[0]}}
         </button>
       </div>

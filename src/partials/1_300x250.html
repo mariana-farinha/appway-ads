@@ -21,45 +21,45 @@
       class="aw_main flex-grow"
     >
       <div
-        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start hide "
+        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
       >
-        <h1 style="color: #4d4d4e;" class="text-bold text-xl line-height-sm">
+        <h1 class="text-bold text-xl line-height-sm text-secondary">
           {{data.slide.[0].textArea.[0]}}
+          <span class="text-sm text-bold line-height-lg text-primary"
+            >{{data.slide.[0].textArea.[1]}}</span
+          >
         </h1>
-        <span class="text-sm text-bold line-height-lg " style="color: #3ca09b"
-          >{{data.slide.[0].textArea.[1]}}</span
-        >
       </div>
 
       <div
-        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start hide "
+        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
       >
-        <h2 style="color: #4d4d4e" class="text-xl text-bold line-height-sm">
+        <h2 class="text-xl text-bold line-height-sm text-secondary">
           {{data.slide.[1].textArea.[0]}}
-          <span style="color: #3ca09b;">{{data.slide.[1].textArea.[1]}}</span>
+          <span class="text-primary">{{data.slide.[1].textArea.[1]}}</span>
         </h2>
       </div>
 
       <div
-        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start hide "
+        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
       >
-        <h2 style="color: #4d4d4e" class="text-xl text-bold line-height-sm">
+        <h2 class="text-secondary text-xl text-bold line-height-sm">
           {{data.slide.[2].textArea.[0]}}
           <br />
-          <span style="color: #3ca09b;">{{data.slide.[2].textArea.[1]}}</span>
+          <span class="text-primary">{{data.slide.[2].textArea.[1]}}</span>
         </h2>
       </div>
 
       <div
-        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start hide "
+        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
       >
-        <h2 style="color: #4d4d4e;" class="text-bold text-xl line-height-sm">
+        <h2 class="text-secondary text-bold text-xl line-height-sm">
           {{data.slide.[3].textArea.[0]}}
         </h2>
-        <span style="color: #3ca09b;" class="text-xl text-bold line-height-lg"
+        <span class="text-primary text-xl text-bold line-height-lg"
           >{{data.slide.[3].textArea.[1]}}</span
         >
-        <button class="btn" style="margin-top: 15px;">
+        <button class="aw_btn mt-3">
           {{data.slide.[4].textArea.[0]}}
         </button>
       </div>
