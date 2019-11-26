@@ -6,6 +6,7 @@ const plugins = require("gulp-load-plugins");
 
 const $ = plugins();
 
+// Bring folder structure back to its initial state
 function cleanup() {
   return src("dist", { read: false, allowEmpty: true }).pipe($.clean());
 }
@@ -16,6 +17,7 @@ function resetCache(done) {
   done();
 }
 
+// Compile Panini templates, partials, data and layouts into html
 function html() {
   return src("src/ads/**/*.html")
     .pipe(
@@ -29,6 +31,7 @@ function html() {
     .pipe(dest("dist/ads"));
 }
 
+// Handle sass compilation
 sass.compiler = require("node-sass");
 
 function sass() {
@@ -37,10 +40,12 @@ function sass() {
     .pipe(dest("dist/css"));
 }
 
+// Handle JavaScript files
 function js() {
   return src("src/js/**.js").pipe(dest("dist/js"));
 }
 
+// Handle image files
 function images() {
   return src("src/images/**/*").pipe(dest("dist/images"));
 }
@@ -69,6 +74,7 @@ function watchFiles() {
   watch("src/images/**/*").on("all", series(images, browser.reload));
 }
 
+// Gulp tasks
 exports.build = series(resetCache, cleanup, parallel(html, sass, js, images));
 exports.default = series(
   resetCache,
