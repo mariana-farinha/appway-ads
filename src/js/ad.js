@@ -6,7 +6,7 @@ window.addEventListener("load", function() {
       CSS_CLASS: {
         SHOW: " aw_slide--show ",
         HIDE: " aw_slide--hide ",
-        LAST_SLIDE: " last-slide "
+        LAST_SLIDE: " aw_slide--last "
       }
     };
 
