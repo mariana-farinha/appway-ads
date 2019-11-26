@@ -5,16 +5,16 @@ $btn-bg: #ffffff;
 $btn-hover-bg: #dadada;
 $btn-hover-color: #000000;
 
-@import "base";
-
-.last-slide {
-  background-image: url(../images/scorpio-study.jpg);
+.aw_slide--last {
+  background-image: url(../images/scorpio-study-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
   position: relative;
 }
 
-.bg-image {
-  background-image: url(../images/scorpio-study.jpg);
+.bg-image-1 {
+  background-image: url(../images/scorpio-study-1.jpg);
 }
+
+@import "base";
