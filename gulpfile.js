@@ -1,10 +1,22 @@
 const { src, dest, parallel, series, watch } = require("gulp");
 const panini = require("panini");
 const browser = require("browser-sync");
-const fs = require("fs");
+const glob = require("glob");
+const path = require("path");
 const plugins = require("gulp-load-plugins");
 
-const $ = plugins();
+const $ = plugins({ camelize: true });
+
+// Outputs an array of the target directory names
+function getTargetDirNames() {
+  // Synchronous glob search
+  return glob.sync("src/ads/**/*.html").map(function(filename) {
+    var dir = path.dirname(filename).replace("src", "dist");
+    return dir + "/" + path.basename(filename, ".html");
+  });
+}
+
+var targetDirnames = getTargetDirNames();
 
 // Bring folder structure back to its initial state
 function cleanup() {
@@ -28,6 +40,11 @@ function html() {
         partials: "src/partials"
       })
     )
+    .pipe(
+      $.rename(function(path) {
+        path.dirname += "/" + path.basename;
+      })
+    )
     .pipe(dest("dist/ads"));
 }
 
@@ -37,17 +54,35 @@ sass.compiler = require("node-sass");
 function sass() {
   return src("src/sass/**/*.scss")
     .pipe($.sass().on("error", $.sass.logError))
-    .pipe(dest("dist/css"));
+    .pipe(
+      $.multiDest(
+        targetDirnames.map(function(dir) {
+          return dir + "/css";
+        })
+      )
+    );
 }
 
 // Handle JavaScript files
 function js() {
-  return src("src/js/**.js").pipe(dest("dist/js"));
+  return src("src/js/**.js").pipe(
+    $.multiDest(
+      targetDirnames.map(function(dir) {
+        return dir + "/js";
+      })
+    )
+  );
 }
 
 // Handle image files
 function images() {
-  return src("src/images/**/*").pipe(dest("dist/images"));
+  return src("src/images/**/*").pipe(
+    $.multiDest(
+      targetDirnames.map(function(dir) {
+        return dir + "/images";
+      })
+    )
+  );
 }
 
 // Start a server with LiveReload to preview the site in
