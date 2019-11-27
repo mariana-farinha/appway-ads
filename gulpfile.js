@@ -7,20 +7,28 @@ const plugins = require("gulp-load-plugins");
 
 const $ = plugins({ camelize: true });
 
-// Outputs an array of the target directory names
-function getTargetDirNames() {
+// Outputs an array of our campaign names (e.g. scorpio-campaign, client-onboarding)
+const campaignNames = (function() {
+  // Synchronous glob search
+  return glob.sync("src/ads/*").map(function(filename) {
+    return filename.replace("src/ads/", "");
+  });
+})();
+
+// Outputs an array of the target directory names for each build
+const targetDirnames = (function() {
   // Synchronous glob search
   return glob.sync("src/ads/**/*.html").map(function(filename) {
     var dir = path.dirname(filename).replace("src", "dist");
     return dir + "/" + path.basename(filename, ".html");
   });
-}
-
-var targetDirnames = getTargetDirNames();
+})();
 
 // Bring folder structure back to its initial state
-function cleanup() {
-  return src("dist", { read: false, allowEmpty: true }).pipe($.clean());
+function clean() {
+  return src(["dist", "zip"], { read: false, allowEmpty: true }).pipe(
+    $.clean()
+  );
 }
 
 // Reset Panini's cache of layouts and partials
@@ -109,11 +117,21 @@ function watchFiles() {
   watch("src/images/**/*").on("all", series(images, browser.reload));
 }
 
+function zip(done) {
+  campaignNames.forEach(function(campaignName) {
+    src("dist/ads/" + campaignName + "/**")
+      .pipe($.zip(campaignName + ".zip"))
+      .pipe(dest("zip"));
+  });
+  done();
+}
+
 // Gulp tasks
-exports.build = series(resetCache, cleanup, parallel(html, sass, js, images));
+exports.zip = series(resetCache, clean, parallel(html, sass, js, images), zip);
+exports.build = series(resetCache, clean, parallel(html, sass, js, images));
 exports.default = series(
   resetCache,
-  cleanup,
+  clean,
   parallel(html, sass, js, images),
   server,
   watchFiles
