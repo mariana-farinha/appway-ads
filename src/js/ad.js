@@ -4,9 +4,9 @@ window.addEventListener("load", function() {
     // Constant Values
     var CONST = {
       CSS_CLASS: {
-        SHOW: " aw_slide--show ",
-        HIDE: " aw_slide--hide ",
-        LAST_SLIDE: " aw_slide--last "
+        SHOW: "aw_slide--show",
+        HIDE: "aw_slide--hide",
+        LAST_SLIDE: "aw_slide--last"
       }
     };
 
