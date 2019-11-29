@@ -5,6 +5,8 @@ const glob = require("glob");
 const path = require("path");
 const plugins = require("gulp-load-plugins");
 const yargs = require("yargs");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
 
 const $ = plugins({ camelize: true });
 const PRODUCTION = !!yargs.argv.production; // Convert to boolean value
@@ -55,6 +57,7 @@ function html() {
         path.dirname += "/" + path.basename;
       })
     )
+    .pipe($.htmlmin({ collapseWhitespace: true }))
     .pipe(dest("dist/ads"));
 }
 
@@ -62,9 +65,10 @@ function html() {
 sass.compiler = require("node-sass");
 
 function sass() {
+  const plugins = [autoprefixer(), cssnano()];
   return src("src/sass/**/*.scss")
     .pipe($.sass().on("error", $.sass.logError))
-    .pipe($.autoprefixer())
+    .pipe($.postcss(plugins))
     .pipe(
       $.multiDest(
         targetDirnames.map(function(dir) {
@@ -76,13 +80,15 @@ function sass() {
 
 // Handle JavaScript files
 function js() {
-  return src("src/js/**.js").pipe(
-    $.multiDest(
-      targetDirnames.map(function(dir) {
-        return dir + "/js";
-      })
-    )
-  );
+  return src("src/js/**.js")
+    .pipe($.uglify())
+    .pipe(
+      $.multiDest(
+        targetDirnames.map(function(dir) {
+          return dir + "/js";
+        })
+      )
+    );
 }
 
 // Handle image files
