@@ -4,8 +4,10 @@ const browser = require("browser-sync");
 const glob = require("glob");
 const path = require("path");
 const plugins = require("gulp-load-plugins");
+const yargs = require("yargs");
 
 const $ = plugins({ camelize: true });
+const PRODUCTION = !!yargs.argv.production; // Convert to boolean value
 
 // Outputs an array of our campaign names (e.g. scorpio-campaign, client-onboarding)
 const campaignNames = (function() {
@@ -62,6 +64,7 @@ sass.compiler = require("node-sass");
 function sass() {
   return src("src/sass/**/*.scss")
     .pipe($.sass().on("error", $.sass.logError))
+    .pipe($.autoprefixer())
     .pipe(
       $.multiDest(
         targetDirnames.map(function(dir) {
@@ -84,13 +87,15 @@ function js() {
 
 // Handle image files
 function images() {
-  return src("src/images/**/*").pipe(
-    $.multiDest(
-      targetDirnames.map(function(dir) {
-        return dir + "/images";
-      })
-    )
-  );
+  return src("src/images/**/*")
+    .pipe($.imagemin())
+    .pipe(
+      $.multiDest(
+        targetDirnames.map(function(dir) {
+          return dir + "/images";
+        })
+      )
+    );
 }
 
 // Start a server with LiveReload to preview the site in
