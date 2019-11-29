@@ -3,10 +3,6 @@
   left: -30px;
   position: relative;
   transition: left 1s, opacity 1s;
-  -moz-transition: left 1s, opacity 1s;
-  -o-transition: left 1s, opacity 1s;
-  -webkit-transition: left 1s, opacity 1s;
-  -ms-transition: left 1s, opacity 1s;
   transform: translateZ(0);
 }
 
@@ -31,9 +27,6 @@
   color: $btn-color;
   text-align: center;
   vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   background-color: $btn-bg;
   border: 1px solid $btn-bg;
