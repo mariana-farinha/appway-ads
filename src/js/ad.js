@@ -33,7 +33,7 @@ window.addEventListener("load", function() {
       );
 
       if (index === slides.length - 1) {
-        adContainer.className += CONST.CSS_CLASS.LAST_SLIDE;
+        adContainer.className += " " + CONST.CSS_CLASS.LAST_SLIDE;
       } else {
         replaceCssClassName(adContainer, CONST.CSS_CLASS.LAST_SLIDE, "");
       }
