@@ -81,6 +81,7 @@ function sass() {
 // Handle JavaScript files
 function js() {
   return src("src/js/**.js")
+    .pipe($.babel())
     .pipe($.uglify())
     .pipe(
       $.multiDest(
