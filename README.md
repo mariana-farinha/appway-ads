@@ -54,6 +54,19 @@ Example) campaign IDs: campaign1, campaign2; banner size: 300x250; content versi
 
 The build process will generate the final folders based on the structure above.
 
+### E.g.) ads/campaign1/A1_300x250.html
+
+```html
+---
+layout: default
+title: Campaign 1
+stylesheet: campaign1.css
+data: campaign1.json
+---
+
+{{> 1_300x250 data=campaign1.A}}
+```
+
 ## Setup
 
 To get started run the following commands:
