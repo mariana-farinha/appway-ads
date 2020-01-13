@@ -82,7 +82,7 @@ function sass() {
 function js() {
   return src("src/js/**.js")
     .pipe($.babel())
-    .pipe($.uglify())
+    .pipe($.if(PRODUCTION, $.uglify()))
     .pipe(
       $.multiDest(
         targetDirnames.map(function(dir) {
@@ -95,7 +95,7 @@ function js() {
 // Handle image files
 function images() {
   return src("src/images/**/*")
-    .pipe($.imagemin())
+    .pipe($.if(PRODUCTION, $.imagemin()))
     .pipe(
       $.multiDest(
         targetDirnames.map(function(dir) {
