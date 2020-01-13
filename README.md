@@ -18,6 +18,42 @@ As much as possible we tried to streamline the process for mass-production and a
 
 ## Project Structure
 
+Example) campaign IDs: campaign1, campaign2; banner size: 300x250; content version: A, B for each campaign.
+
+- ads:
+  - campaign1
+    - A1_300x250.html (Generate an ad using version A of the copy + template 1_300x250.html)
+    - B1_300x250.html
+  - campaign2
+    - A1_300x250.html
+    - B1_300x250.html
+- data:
+  - campaign1.json (Contains all the copy versions for the campaign. A and B in this case)
+  - campaign2.json
+- images:
+  - campaign1_1.png
+  - campaign2_1.png
+  - appway-logo--light.svg
+- js:
+  - ad.js (Small library to run the ads)
+- layouts:
+  - default.html (Skeleton of the final html output)
+- partials:
+  - 1_300x250.html
+- sass:
+  - \_background.scss
+  - \_reset.scss
+  - \_sizing.scss
+  - \_variables.scss
+  - \_typography.scss
+  - \_spacing.scss
+  - (...)
+  - \_base.scss
+  - campaign1.scss  ( imports \_base.scss and defines custom variables)
+  - campaign2.scss ( imports \_base.scss and defines custom variables)
+
+The build process will generate the final folders based on the structure above.
+
 ## Setup
 
 To get started run the following commands:
