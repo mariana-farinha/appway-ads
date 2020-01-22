@@ -1,0 +1,36 @@
+$primary: #fd5e65;
+$secondary: #ffffff;
+$btn-color: #000000;
+$btn-bg: #ffffff;
+$btn-hover-bg: #dadada;
+$btn-hover-color: #000000;
+
+#aw_ad {
+  background-color: #222222;
+}
+
+#aw_ad.aw_slide--last {
+  background-color: $primary;
+}
+
+.aw_slide--last {
+  background-image: url(../images/onboarding-trends_2020-ebook.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+
+.bg-image-1 {
+  background-image: url(../images/onboarding-trends_2020-ebook.png);
+  background-position: center 125%;
+  background-size: 112%;
+}
+
+.bg-image-2 {
+  background-image: url(../images/onboarding-trends_2020-ebook.png);
+  background-position: 89% center;
+  background-size: 28%;
+}
+
+@import "base";

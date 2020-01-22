@@ -1,0 +1,61 @@
+<a
+  target="_blank"
+  href="{{{data.target}}}"
+  style="text-decoration: none;display: inline-block; position: absolute;"
+>
+  <div
+    id="aw_ad"
+    style="width: 300px; height: 250px; overflow: hidden;"
+    class="d-flex flex-column"
+  >
+    <div class="aw_top-banner">
+      <img
+        class="aw_top-banner_logo"
+        src="images/appway-logo--white.svg"
+        width="80"
+        height="21"
+      />
+    </div>
+    <div
+      style="height: 100%; width: 100%; overflow: hidden;"
+      class="aw_main flex-grow"
+    >
+      <div
+        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
+      >
+        <h1 class="text-light text-xl line-height-lg mb-2 text-secondary">
+          {{{data.slide.[0].textArea.[0]}}}
+          <span class="text-bold  text-primary"
+            >{{{data.slide.[0].textArea.[1]}}}</span
+          >
+        </h1>
+      </div>
+
+      <div
+        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
+      >
+        <h2 class="text-xxl text-bold line-height-sm text-secondary">
+          {{{data.slide.[1].textArea.[0]}}}
+          <span class="text-primary">{{{data.slide.[1].textArea.[1]}}}</span>
+        </h2>
+      </div>
+
+      <div
+        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-start aw_slide--hide "
+      >
+        <h2 class="text-xl text-bold line-height-sm text-secondary">
+          {{{data.slide.[2].textArea.[0]}}}
+          <span class="text-primary">{{{data.slide.[2].textArea.[1]}}}</span>
+        </h2>
+      </div>
+
+      <div
+        class="aw_slide h-100 d-flex flex-column justify-content-center align-items-center aw_slide--hide "
+      >
+        <button class="aw_btn align-self-center" style="top: 50px">
+          {{{data.slide.[3].textArea.[0]}}}
+        </button>
+      </div>
+    </div>
+  </div>
+</a>
